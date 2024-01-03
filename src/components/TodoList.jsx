@@ -1,127 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import TodoItem from './TodoItem';
 
-//const TodoList = () => {
-//   const [tasks, setTasks] = useState([]);
-//   const [newTask, setNewTask] = useState('');
-
-//   const addTask = () => {
-//     if (newTask.trim() !== '') {
-//       setTasks([
-//         ...tasks,
-//         { id: Date.now(), text: newTask, completed: false },
-//       ]);
-//       setNewTask('');
-//     }
-//   };
-
-//   const deleteTask = (taskId) => {
-//     setTasks(tasks.filter((task) => task.id !== taskId));
-//   };
-
-//   const toggleCompletion = (taskId) => {
-//     setTasks(
-//       tasks.map((task) =>
-//         task.id === taskId ? { ...task, completed: !task.completed } : task
-//       )
-//     );
-//   };
-// const TodoList = ({ onUpdateCompletedTasks, onAllTasksCompleted }) => {
-// const [tasks, setTasks] = useState([]);
-// const [newTask, setNewTask] = useState('');
-// const [completedTasksCount, setCompletedTasksCount] = useState(0);
-
-// const addTask = () => {
-//   if (newTask.trim() !== '') {
-//     setTasks([
-//       ...tasks,
-//       { id: Date.now(), text: newTask, completed: false },
-//     ]);
-//     setNewTask('');
-//   }
-// };
-
-// const deleteTask = (taskId) => {
-//   setTasks(tasks.filter((task) => task.id !== taskId));
-//   updateCompletedTasksCount();
-// };
-
-// const toggleCompletion = (taskId) => {
-//   setTasks(
-//     tasks.map((task) =>
-//       task.id === taskId
-//         ? { ...task, completed: !task.completed }
-//         : task
-//     )
-//   );
-//   updateCompletedTasksCount();
-// };
-
-// // const updateCompletedTasksCount = () => {
-// //   setCompletedTasksCount(tasks.filter((task) => task.completed).length);
-// //   onUpdateCompletedTasks(completedTasksCount);
-
-// //   if (completedTasksCount === 0 && tasks.length === 0) {
-// //     onAllTasksCompleted();
-// //   }
-// // };
-
-
-// const updateCompletedTasksCount = () => {
-//     const completedTasksCount = tasks.filter((task) => task.completed).length;
-//     onUpdateCompletedTasks(completedTasksCount);
-  
-//     if (completedTasksCount === tasks.length) {
-//       onAllTasksCompleted();
-//     }
-//   };
-  
-// useEffect(() => {
-//   updateCompletedTasksCount();
-// }, [tasks]);
-// const TodoList = ({ onUpdateCompletedTasks, onAllTasksCompleted }) => {
-//     const [tasks, setTasks] = useState([]);
-//     const [newTask, setNewTask] = useState('');
-//     const [completedTasksCount, setCompletedTasksCount] = useState(0);
-  
-//     const addTask = () => {
-//       if (newTask.trim() !== '') {
-//         setTasks([
-//           ...tasks,
-//           { id: Date.now(), text: newTask, completed: false },
-//         ]);
-//         setNewTask('');
-//       }
-//     };
-  
-//     const deleteTask = (taskId) => {
-//       setTasks(tasks.filter((task) => task.id !== taskId));
-//       updateCompletedTasksCount();
-//     };
-  
-//     const toggleCompletion = (taskId) => {
-//       setTasks(
-//         tasks.map((task) =>
-//           task.id === taskId
-//             ? { ...task, completed: !task.completed }
-//             : task
-//         )
-//       );
-//       updateCompletedTasksCount();
-//     };
-  
-//     const updateCompletedTasksCount = () => {
-//       setCompletedTasksCount(tasks.filter((task) => task.completed).length);
-//       onUpdateCompletedTasks(completedTasksCount);
-  
-//       if (completedTasksCount === tasks.length) {
-//         onAllTasksCompleted();
-//       }
-//     };
-  
-//     useEffect(() => {
-//       updateCompletedTasksCount();
-//     }, [tasks]);
 
 const TodoList = ({ tasks,setTasks, onUpdateCompletedTasks, onAllTasksCompleted }) => {
     const [newTask, setNewTask] = useState('');
@@ -189,7 +68,7 @@ const TodoList = ({ tasks,setTasks, onUpdateCompletedTasks, onAllTasksCompleted 
             Add Task
         </button>
       </div>
-      {/* Display tasks */}
+      
       {tasks.map((task) => (
         <TodoItem
           key={task.id}
